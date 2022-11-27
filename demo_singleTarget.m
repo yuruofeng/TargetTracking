@@ -2,7 +2,7 @@ clear; close all; clc
 
 filter = SingleTargetFilter;
 filter = filter.gen_model;
-MCRuns = 1;
+MCRuns = 1;     %
 %% 扩展卡尔曼滤波EKF
 % 初始化————航迹起始方法可以参考其他文献
 RMSE_posEKF = zeros(MCRuns,filter.K);
