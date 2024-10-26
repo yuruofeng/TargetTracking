@@ -1,3 +1,4 @@
+% detect before track for single target tracking
 clear; close all; clc
 
 filter = SingleTargetFilter;
@@ -11,8 +12,8 @@ RMSE_posUKF = zeros(MCRuns,filter.K);
 RMSE_velUKF = zeros(MCRuns,filter.K);
 RMSE_posCKF = zeros(MCRuns,filter.K); 
 RMSE_velCKF = zeros(MCRuns,filter.K);
-RMSE_posPF = zeros(MCRuns,filter.K);
-RMSE_velPF = zeros(MCRuns,filter.K);
+RMSE_posPF  = zeros(MCRuns,filter.K);
+RMSE_velPF  = zeros(MCRuns,filter.K);
 
 for iMCruns = 1:MCRuns
     stateUpd_EKF = [ 0; 6; 0; 1; 0.02 ];
@@ -31,11 +32,10 @@ for iMCruns = 1:MCRuns
     est_EKF = zeros(filter.targetStateDim,filter.K);
     est_UKF = zeros(filter.targetStateDim,filter.K);
     est_CKF = zeros(filter.targetStateDim,filter.K);
-    est_PF = zeros(filter.targetStateDim,filter.K);
+    est_PF  = zeros(filter.targetStateDim,filter.K);
 
     tEKF = 0; tUKF = 0; tCKF = 0; tPF = 0;
     for k = 1:filter.K
-        h = waitbar(iMCruns/MCRuns);
         %%
         tic
         % EKF预测
@@ -93,7 +93,6 @@ for iMCruns = 1:MCRuns
     disp(['CKF:',num2str(tCKF)]);
     disp(['PF:',num2str(tPF)]);
 end
-close(h);
 RMSE_posEKF = mean(RMSE_posEKF,1); RMSE_velEKF = mean(RMSE_velEKF,1);
 RMSE_posUKF = mean(RMSE_posUKF,1); RMSE_velUKF = mean(RMSE_velUKF,1);
 RMSE_posCKF = mean(RMSE_posCKF,1); RMSE_velCKF = mean(RMSE_velCKF,1);

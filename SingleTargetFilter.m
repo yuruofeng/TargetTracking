@@ -6,12 +6,6 @@ classdef SingleTargetFilter
 % model and the sensor can provide radial distance and
 % corresponding azimuth of the target.
 % P.S. the resampling algorithm for particle filter is a copy from a open source project.
-% 
-% ==================================================
-% Version 0.1 ---> 2022.04.29
-% Version 0.2 ---> 2022.05.22
-% Version 0.3 ---> 2022.05.31
-% coded by YU Ruofeng
 % ============ reference ===========================
 % [1] 何友. 雷达数据处理及应用[M]
 % 
@@ -46,11 +40,12 @@ classdef SingleTargetFilter
             obj.T = 1;
             obj.targetStateDim = 5;
             obj.processNoiseDim = 3;
+            obj.Q = [obj.T^2/2 0 0; obj.T 0 0; 0 obj.T^2/2 0; 0 obj.T 0; 0 0 1];
+            % ---- DBT测量
             obj.MeasNoiseDim = 2;
             obj.MeasDim = 2;
             obj.sigma_process = diag([1, 1, 4e-4]);
             obj.sigma_measNoise = diag([pi/90;5]);
-            obj.Q = [obj.T^2/2 0 0; obj.T 0 0; 0 obj.T^2/2 0; 0 obj.T 0; 0 0 1];
         end
         % ============== 生成二维航迹和观测 ===============
         function obj = gen_model(obj)
@@ -58,7 +53,7 @@ classdef SingleTargetFilter
             for k = 1:obj.K
                 target_state = obj.CT_dynamin_model(obj.T,target_state)*target_state;
                 obj.truth_X(:,k) = target_state;
-                % 测量
+                % ---- DBT测量
                 obj.meas(:,k) = [atan2(target_state(3,:),target_state(1,:)); 
                                 sqrt(sum(target_state([1 3],:).^2,1))]...
                     +obj.sigma_measNoise*randn(obj.MeasNoiseDim,size(target_state,2));
