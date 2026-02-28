@@ -1,0 +1,62 @@
+# TargetTracking .gitignore
+
+# MATLAB generated files
+*.asv
+*.m~
+*.mat
+!config/*.mat
+!resources/*.mat
+
+# MATLAB autosave
+*~
+
+# Compiled MATLAB files
+*.mex*
+*.p
+
+# Simulink
+*.slx
+*.mdl
+slprj/
+sldv/
+
+# Coverage and test results
+html/
+*.cov
+test_results/
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Build artifacts
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Documentation generated
+docs/html/
+docs/latex/
+
+# Package files
+*.zip
+*.tar.gz
+*.rar
