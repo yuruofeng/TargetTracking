@@ -68,7 +68,7 @@ classdef TestTbdAlgorithms < matlab.unittest.TestCase
             testCase.assertEqual(size(state, 1), testCase.config.numFrames);
             testCase.assertEqual(size(state, 2), 5);
 
-            [posRmse, velRmse] = pf.computeRmse(testCase.trueState);
+            [posRmse, ~] = pf.computeRmse(testCase.trueState);
             testCase.verifyLessThan(mean(posRmse), 10, 'PF-TBD位置RMSE应合理');
         end
 
@@ -103,24 +103,24 @@ classdef TestTbdAlgorithms < matlab.unittest.TestCase
 
         function testTbdScenarioTrajectory(testCase)
             scenario = tbd.Scenario(testCase.config);
-            trueState = scenario.generateTrajectory();
+            localTrueState = scenario.generateTrajectory();
 
-            testCase.assertEqual(size(trueState, 1), testCase.config.numFrames);
-            testCase.assertEqual(size(trueState, 2), 5);
+            testCase.assertEqual(size(localTrueState, 1), testCase.config.numFrames);
+            testCase.assertEqual(size(localTrueState, 2), 5);
 
-            velDiff = diff(trueState(:, 3:4));
+            velDiff = diff(localTrueState(:, 3:4));
             testCase.verifyTrue(all(abs(velDiff(:)) < 1e-10), '速度应恒定');
         end
 
         function testTbdScenarioMeasurements(testCase)
             scenario = tbd.Scenario(testCase.config);
-            trueState = scenario.generateTrajectory();
-            [measData, psfKernel] = scenario.generateMeasurements(trueState);
+            localTrueState = scenario.generateTrajectory();
+            [localMeasData, localPsfKernel] = scenario.generateMeasurements(localTrueState);
 
-            testCase.assertEqual(size(measData, 3), testCase.config.numFrames);
-            testCase.assertEqual(size(measData, 1), testCase.config.gridSize(1));
-            testCase.assertEqual(size(measData, 2), testCase.config.gridSize(2));
-            testCase.assertEqual(size(psfKernel, 1), 2*testCase.config.targetRadius + 1);
+            testCase.assertEqual(size(localMeasData, 3), testCase.config.numFrames);
+            testCase.assertEqual(size(localMeasData, 1), testCase.config.gridSize(1));
+            testCase.assertEqual(size(localMeasData, 2), testCase.config.gridSize(2));
+            testCase.assertEqual(size(localPsfKernel, 1), 2*testCase.config.targetRadius + 1);
         end
 
         function testPsfKernel(testCase)
@@ -133,11 +133,11 @@ classdef TestTbdAlgorithms < matlab.unittest.TestCase
 
         function testDpTbdDetectionMap(testCase)
             dp = tbd.DpTbd(testCase.config);
-            detMap = dp.computeDetectionMap(testCase.measData, testCase.psfKernel);
+            localDetMap = dp.computeDetectionMap(testCase.measData, testCase.psfKernel);
 
-            testCase.assertEqual(size(detMap, 1), testCase.config.gridSize(1));
-            testCase.assertEqual(size(detMap, 2), testCase.config.gridSize(2));
-            testCase.assertEqual(size(detMap, 3), testCase.config.numFrames);
+            testCase.assertEqual(size(localDetMap, 1), testCase.config.gridSize(1));
+            testCase.assertEqual(size(localDetMap, 2), testCase.config.gridSize(2));
+            testCase.assertEqual(size(localDetMap, 3), testCase.config.numFrames);
         end
 
         function testPfTbdParticleInit(testCase)

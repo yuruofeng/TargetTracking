@@ -62,11 +62,11 @@ classdef IMM < handle
         %   输出参数：
         %       estState - 初始融合状态
         %       estCovar - 初始融合协方差
-            nModels = obj.nModels;
-            obj.lastStates = cell(nModels, 1);
-            obj.lastCovars = cell(nModels, 1);
+            numModels = obj.nModels;
+            obj.lastStates = cell(numModels, 1);
+            obj.lastCovars = cell(numModels, 1);
             
-            for m = 1:nModels
+            for m = 1:numModels
                 stateDim = obj.config.modelStateDims(m);
                 obj.lastStates{m} = obj.convertState(x0, stateDim);
                 obj.lastCovars{m} = obj.shrinkCovar(P0, stateDim);
@@ -84,47 +84,41 @@ classdef IMM < handle
         %       mixedStates - 混合后的状态向量数组 {nModels x 1}
         %       mixedCovars - 混合后的协方差数组 {nModels x 1}
         %       cBar        - 归一化常数向量 [nModels x 1]
-            nModels = obj.nModels;
-            mixedStates = cell(nModels, 1);
-            mixedCovars = cell(nModels, 1);
+            numModels = obj.nModels;
+            mixedStates = cell(numModels, 1);
+            mixedCovars = cell(numModels, 1);
             
-            % 计算归一化常数 c_bar(j) = sum_i(pi_ij * mu_i)
-            cBar = zeros(nModels, 1);
-            for j = 1:nModels
+            cBar = zeros(numModels, 1);
+            for j = 1:numModels
                 cBar(j) = sum(obj.transProb(:,j) .* obj.modelProbs);
             end
             
-            % 计算混合权重 mu_i|j = pi_ij * mu_i / c_bar(j)
-            weights = zeros(nModels, nModels);
-            for i = 1:nModels
-                for j = 1:nModels
+            weights = zeros(numModels, numModels);
+            for i = 1:numModels
+                for j = 1:numModels
                     weights(i,j) = obj.transProb(i,j) * obj.modelProbs(i) / cBar(j);
                 end
             end
             
             outputDim = obj.config.outputStateDim;
             
-            % 计算混合状态和协方差
-            for j = 1:nModels
+            for j = 1:numModels
                 targetStateDim = obj.config.modelStateDims(j);
                 
-                % 混合状态: x_0j = sum_i(mu_i|j * x_i)
                 mixedState = zeros(outputDim, 1);
-                for i = 1:nModels
+                for i = 1:numModels
                     convertedState = obj.convertState(obj.lastStates{i}, outputDim);
                     mixedState = mixedState + weights(i,j) * convertedState;
                 end
                 
-                % 混合协方差: P_0j = sum_i(mu_i|j * [P_i + (x_i-x_0j)*(x_i-x_0j)'])
                 mixedCovar = zeros(outputDim, outputDim);
-                for i = 1:nModels
+                for i = 1:numModels
                     convertedState = obj.convertState(obj.lastStates{i}, outputDim);
                     diff = convertedState - mixedState;
                     expandedCovar = obj.expandCovar(obj.lastCovars{i}, outputDim);
                     mixedCovar = mixedCovar + weights(i,j) * (expandedCovar + diff * diff');
                 end
                 
-                % 转换到目标状态维度
                 mixedStates{j} = obj.convertState(mixedState, targetStateDim);
                 mixedCovars{j} = obj.shrinkCovar(mixedCovar, targetStateDim);
             end
@@ -143,15 +137,15 @@ classdef IMM < handle
         %       states      - 更新后的状态数组 {nModels x 1}
         %       covars      - 更新后的协方差数组 {nModels x 1}
         %       likelihoods - 各模型的似然值 [nModels x 1]
-            nModels = obj.nModels;
-            states = cell(nModels, 1);
-            covars = cell(nModels, 1);
-            likelihoods = zeros(nModels, 1);
+            numModels = obj.nModels;
+            states = cell(numModels, 1);
+            covars = cell(numModels, 1);
+            likelihoods = zeros(numModels, 1);
             
-            for m = 1:nModels
+            for m = 1:numModels
                 model = obj.models{m};
-                [state, covar] = model.init(mixedStates{m}, mixedCovars{m});
-                [state, covar] = model.predict(state, covar);
+                [~, ~] = model.init(mixedStates{m}, mixedCovars{m});
+                [state, covar] = model.predict(mixedStates{m}, mixedCovars{m});
                 [state, covar, innov, innovCov] = model.update(meas, state, covar);
                 
                 states{m} = state;

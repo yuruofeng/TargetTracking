@@ -137,19 +137,21 @@ classdef FilterFactory
             filter = dbt.MotionModelEKF(config);
         end
         
-        function filter = createDefaultIMM(modelTypes)
+        function filter = createDefaultIMM(varargin)
         % CREATEDEFAULTIMM  创建默认IMM配置。
         %
         %   输入参数：
-        %       modelTypes - 模型类型元胞数组，如 {'CV', 'CA', 'CT'}
+        %       modelTypes - (可选) 模型类型元胞数组，如 {'CV', 'CA', 'CT'}
         %
         %   输出参数：
         %       filter - IMM滤波器对象
-            if nargin < 1
-                modelTypes = {'CV', 'CA', 'CT'};
+            if nargin >= 1
+                modelTypes = varargin{1};
+                config = dbt.ConfigIMM('modelTypes', modelTypes);
+                filter = dbt.IMM(config);
+            else
+                filter = dbt.IMM();
             end
-            
-            filter = dbt.IMM();  % 使用默认ConfigIMM配置
         end
         
         function config = parseMotionConfig(modelType, varargin)

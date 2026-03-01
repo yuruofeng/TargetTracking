@@ -107,7 +107,7 @@ function varargout = demoTbd(varargin)
     pf = tbd.PfTbd(cfg);
     [pfTime, pfPosRmse, pfVelRmse] = pf.runWithTiming(measData, trueState(1,:), ...
                                                        psfKernel, trueState);
-    pfState = pf.estState;
+    pfState = pf.getEstimate();
     fprintf('  Time: %.2f s | Mean pos RMSE: %.2f px | Mean vel RMSE: %.2f\n', ...
             pfTime, mean(pfPosRmse), mean(pfVelRmse));
 

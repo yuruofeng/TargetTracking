@@ -428,9 +428,9 @@ classdef Visualizer
             barX = 1:nAlgo;
             width = 0.35;
             
-            b1 = bar(barX - width/2, meanPos(1:nAlgo), width, ...
+            bar(barX - width/2, meanPos(1:nAlgo), width, ...
                      'FaceColor', viz.Visualizer.COLORS.blue, 'DisplayName', categories{1});
-            b2 = bar(barX + width/2, meanVel(1:nAlgo), width, ...
+            bar(barX + width/2, meanVel(1:nAlgo), width, ...
                      'FaceColor', viz.Visualizer.COLORS.orange, 'DisplayName', categories{2});
             
             set(gca, 'XTick', barX, 'XTickLabel', algoLabels);
@@ -461,7 +461,6 @@ classdef Visualizer
 
             nF = cfg.numFrames;
             snapIdx = unique(round(linspace(1, nF, 4)));
-            nSnaps = length(snapIdx);
 
             subplot(2, 3, 1);
             imagesc(mean(measData, 3)); colormap(gca, 'parula'); hold on;

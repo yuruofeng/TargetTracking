@@ -102,8 +102,8 @@ classdef MotionModelEKF < handle
                 
                 F = obj.getSingerTransitionMatrix(T, beta);
                 u = obj.config.getControlInput(stateUpd, T, alpha, beta);
-                sigma_a = obj.config.getAdaptiveSigma(stateUpd(3), stateUpd(6));
-                Qd = obj.getSingerProcessNoise(T, alpha, beta, sigma_a);
+                adaptSigma = obj.config.getAdaptiveSigma(stateUpd(3), stateUpd(6));
+                Qd = obj.getSingerProcessNoise(T, alpha, beta, adaptSigma);
                 
                 statePre = F * stateUpd + u;
                 

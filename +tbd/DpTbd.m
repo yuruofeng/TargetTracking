@@ -41,7 +41,7 @@ classdef DpTbd < tbd.BaseTbd
             obj@tbd.BaseTbd(cfg);
         end
 
-        function detMap = computeDetectionMap(obj, measData, psfKernel)
+        function localDetMap = computeDetectionMap(obj, measData, psfKernel)
         % COMPUTEDETECTIONMAP  计算匹配滤波检测图。
         %   对每帧数据应用匹配滤波以增强目标信号。
         %
@@ -50,15 +50,15 @@ classdef DpTbd < tbd.BaseTbd
         %       psfKernel - 点扩散函数核
         %
         %   输出参数：
-        %       detMap - 检测图，归一化后的匹配滤波响应
+        %       localDetMap - 检测图，归一化后的匹配滤波响应
             nF = obj.config.numFrames;
             gs = obj.config.gridSize;
-            detMap = zeros(gs(1), gs(2), nF);
+            localDetMap = zeros(gs(1), gs(2), nF);
             for t = 1:nF
-                detMap(:, :, t) = conv2(measData(:, :, t), psfKernel, 'same') ...
+                localDetMap(:, :, t) = conv2(measData(:, :, t), psfKernel, 'same') ...
                                   / (obj.config.noiseStd^2);
             end
-            obj.detMap = detMap;
+            obj.detMap = localDetMap;
         end
 
         function run(obj, measData, psfKernel)
