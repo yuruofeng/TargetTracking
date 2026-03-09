@@ -7,9 +7,8 @@
 *Detect-Before-Track (DBT) & Track-Before-Detect (TBD)*
 
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2020b+-orange?style=flat-square&logo=mathworks)](https://www.mathworks.com/)
-[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-Academic-green?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue?style=flat-square)](startup.m)
-[![GitHub](https://img.shields.io/badge/GitHub-yuruofeng/TargetTracking-black?style=flat-square&logo=github)](https://github.com/yuruofeng/TargetTracking)
 
 [🚀 快速开始](#-快速开始) · [📖 文档](#-算法详解) · [📊 API](#-api-参考) · [❓ FAQ](#-常见问题-faq)
 
@@ -140,16 +139,14 @@
 
 ### ⚡ 安装步骤
 
-```bash
-# 1. 克隆项目到本地
-git clone https://github.com/yuruofeng/TargetTracking.git
-
-# 2. 进入项目目录
-cd TargetTracking
-```
-
 ```matlab
-% 3. 在MATLAB中运行初始化脚本
+% 1. 克隆或下载项目到本地
+git clone https://github.com/your-repo/TargetTracking.git
+
+% 2. 在MATLAB中切换到项目目录
+cd TargetTracking
+
+% 3. 运行初始化脚本
 startup()
 ```
 
@@ -667,78 +664,9 @@ end
 
 ---
 
-## 📚 参考文献
-
-<table>
-<tr>
-<td width="5%">1.</td>
-<td>何友, <em>雷达数据处理及应用</em>, 电子工业出版社.</td>
-</tr>
-<tr>
-<td>2.</td>
-<td>Van der Merwe, R. (2004). <em>Sigma-Point Kalman Filters for Probabilistic Inference in Dynamic State-Space Models</em>.</td>
-</tr>
-<tr>
-<td>3.</td>
-<td>Arasaratnam, I. (2009). <em>Cubature Kalman Filters</em>, IEEE Trans. Automatic Control.</td>
-</tr>
-<tr>
-<td>4.</td>
-<td>Barniv, Y. (1985). <em>Dynamic Programming Solution for Detecting Dim Moving Targets</em>, IEEE Trans. AES.</td>
-</tr>
-<tr>
-<td>5.</td>
-<td>Salmond, D. J. (2001). <em>Track-Before-Detect Techniques</em>, IEE Seminar Target Tracking.</td>
-</tr>
-<tr>
-<td>6.</td>
-<td>Bar-Shalom, Y. (2001). <em>Estimation with Applications to Tracking and Navigation</em>, Wiley.</td>
-</tr>
-</table>
-
----
-
 ## 📄 许可证
 
-本项目采用 MIT 许可证开源发布。详见 [LICENSE](LICENSE) 文件。
-
-<details>
-<summary><strong>📜 MIT License Full Text</strong></summary>
-
-```
-MIT License
-
-Copyright (c) 2024 yuruofeng
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-```
-
-</details>
-
-### 许可证要点
-
-| 权限 | 条件 | 限制 |
-|:-----|:-----|:-----|
-| ✅ 商业使用 | 📋 包含许可证副本 | ❌ 无担保 |
-| ✅ 修改 | 📋 包含版权声明 | ❌ 无责任 |
-| ✅ 分发 | | |
-| ✅ 私人使用 | | |
+本项目仅供学术研究使用。
 
 ---
 
@@ -747,7 +675,5 @@ SOFTWARE.
 **[⬆ 返回顶部](#-targettracking)**
 
 Made with ❤️ for Target Tracking Research
-
-**[GitHub Repository](https://github.com/yuruofeng/TargetTracking)**
 
 </div>
