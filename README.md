@@ -664,37 +664,6 @@ end
 
 ---
 
-## 📚 参考文献
-
-<table>
-<tr>
-<td width="5%">1.</td>
-<td>何友, <em>雷达数据处理及应用</em>, 电子工业出版社.</td>
-</tr>
-<tr>
-<td>2.</td>
-<td>Van der Merwe, R. (2004). <em>Sigma-Point Kalman Filters for Probabilistic Inference in Dynamic State-Space Models</em>.</td>
-</tr>
-<tr>
-<td>3.</td>
-<td>Arasaratnam, I. (2009). <em>Cubature Kalman Filters</em>, IEEE Trans. Automatic Control.</td>
-</tr>
-<tr>
-<td>4.</td>
-<td>Barniv, Y. (1985). <em>Dynamic Programming Solution for Detecting Dim Moving Targets</em>, IEEE Trans. AES.</td>
-</tr>
-<tr>
-<td>5.</td>
-<td>Salmond, D. J. (2001). <em>Track-Before-Detect Techniques</em>, IEE Seminar Target Tracking.</td>
-</tr>
-<tr>
-<td>6.</td>
-<td>Bar-Shalom, Y. (2001). <em>Estimation with Applications to Tracking and Navigation</em>, Wiley.</td>
-</tr>
-</table>
-
----
-
 ## 📄 许可证
 
 本项目仅供学术研究使用。
