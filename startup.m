@@ -1,10 +1,11 @@
 function startup()
-% STARTUP  初始化TargetTracking项目环境。
-%   将项目路径添加到MATLAB搜索路径，并显示项目信息。
+% STARTUP  初始化SingleTargetTracking项目环境。
+%   此脚本将项目路径添加到MATLAB搜索路径，
+%   以便正确加载和调用各模块函数。
 %
 %   使用方法：
-%       cd('TargetTracking');
-%       startup();  % 或 run('startup.m')
+%       cd('single_target_tracking');
+%       startup();
 %
 %   初始化后可使用：
 %       dbt.EKF, dbt.UKF, dbt.CKF, dbt.IMM, dbt.ParticleFilter
@@ -21,7 +22,7 @@ function startup()
     
     fprintf('\n');
     fprintf('╔════════════════════════════════════════════════════════════╗\n');
-    fprintf('║          TargetTracking v2.0.0 - 目标跟踪工具箱              ║\n');
+    fprintf('║          SingleTargetTracking v2.0.0 - 单目标跟踪工具箱          ║\n');
     fprintf('╠════════════════════════════════════════════════════════════╣\n');
     fprintf('║  模块:                                                      ║\n');
     fprintf('║    +dbt/   检测前跟踪 (EKF, UKF, CKF, IMM, ParticleFilter)   ║\n');

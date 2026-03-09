@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 TargetTracking
+# 🎯 SingleTargetTracking
 
 **MATLAB单目标跟踪算法工具箱**
 
@@ -91,7 +91,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                      TargetTracking v2.0                        │
+│                   SingleTargetTracking v2.0                     │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────────────┐ │
@@ -143,7 +143,7 @@
 git clone https://github.com/yuruofeng/single_target_tracking.git
 
 # 2. 进入项目目录
-cd TargetTracking
+cd single_target_tracking
 ```
 
 ```matlab
@@ -155,7 +155,7 @@ startup()
 
 ```
 ╔════════════════════════════════════════════════════════════╗
-║          TargetTracking v2.0.0 - 目标跟踪工具箱            ║
+║      SingleTargetTracking v2.0.0 - 单目标跟踪工具箱        ║
 ╠════════════════════════════════════════════════════════════╣
 ║  模块:                                                     ║
 ║    +dbt/   检测前跟踪 (EKF, UKF, CKF, IMM, ParticleFilter) ║
@@ -451,7 +451,7 @@ run('tests/TestTbdAlgorithms.m')
 ## 📁 目录结构
 
 ```
-TargetTracking/
+single_target_tracking/
 ├── 📂 +dbt/                       # 检测前跟踪模块
 │   ├── 📄 BaseFilter.m            # 抽象滤波器接口
 │   ├── 📄 KalmanFilterBase.m      # 卡尔曼滤波基类
@@ -535,7 +535,7 @@ run('tests/TestDbtFilters.m')
 确保已运行 `startup.m` 初始化脚本：
 
 ```matlab
-cd('path/to/TargetTracking')
+cd('path/to/single_target_tracking')
 startup()
 ```
 

@@ -1,6 +1,6 @@
 # Resources Directory
 
-This directory contains resource files for the TargetTracking project.
+This directory contains resource files for the SingleTargetTracking project.
 
 ## Contents
 
