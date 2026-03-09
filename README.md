@@ -9,7 +9,7 @@
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2020b+-orange?style=flat-square&logo=mathworks)](https://www.mathworks.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue?style=flat-square)](startup.m)
-[![GitHub](https://img.shields.io/badge/GitHub-yuruofeng/single_target_tracking-black?style=flat-square&logo=github)](https://github.com/yuruofeng/single_target_tracking)
+[![GitHub](https://img.shields.io/badge/GitHub-yuruofeng/single--target--tracking-black?style=flat-square&logo=github)](https://github.com/yuruofeng/single-target-tracking)
 
 [🚀 快速开始](#-快速开始) · [📖 文档](#-算法详解) · [📊 API](#-api-参考) · [❓ FAQ](#-常见问题-faq)
 
@@ -140,10 +140,10 @@
 
 ```bash
 # 1. 克隆项目到本地
-git clone https://github.com/yuruofeng/single_target_tracking.git
+git clone https://github.com/yuruofeng/single-target-tracking.git
 
 # 2. 进入项目目录
-cd single_target_tracking
+cd single-target-tracking
 ```
 
 ```matlab
@@ -451,7 +451,7 @@ run('tests/TestTbdAlgorithms.m')
 ## 📁 目录结构
 
 ```
-single_target_tracking/
+single-target-tracking/
 ├── 📂 +dbt/                       # 检测后跟踪模块
 │   ├── 📄 BaseFilter.m            # 抽象滤波器接口
 │   ├── 📄 KalmanFilterBase.m      # 卡尔曼滤波基类
@@ -535,7 +535,7 @@ run('tests/TestDbtFilters.m')
 确保已运行 `startup.m` 初始化脚本：
 
 ```matlab
-cd('path/to/single_target_tracking')
+cd('path/to/single-target-tracking')
 startup()
 ```
 
@@ -648,6 +648,6 @@ end
 
 Made with ❤️ for Target Tracking Research
 
-**[GitHub Repository](https://github.com/yuruofeng/single_target_tracking)**
+**[GitHub Repository](https://github.com/yuruofeng/single-target-tracking)**
 
 </div>

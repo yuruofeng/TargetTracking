@@ -2,7 +2,7 @@
 %   定义项目的基本配置信息，包括模块结构、版本等。
 %
 %   项目结构：
-%       single_target_tracking/
+%       single-target-tracking/
 %       ├── +dbt/           # 检测后跟踪模块 (Detect-Before-Track)
 %       │   ├── 滤波器:     BaseFilter, KalmanFilterBase, EKF, UKF, CKF
 %       │   ├── 运动模型:   MotionModelEKF, MotionModelConfig

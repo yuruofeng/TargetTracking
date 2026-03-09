@@ -4,7 +4,7 @@ function startup()
 %   以便正确加载和调用各模块函数。
 %
 %   使用方法：
-%       cd('single_target_tracking');
+%       cd('single-target-tracking');
 %       startup();
 %
 %   初始化后可使用：
