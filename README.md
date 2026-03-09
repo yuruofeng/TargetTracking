@@ -9,7 +9,7 @@
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2020b+-orange?style=flat-square&logo=mathworks)](https://www.mathworks.com/)
 [![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue?style=flat-square)](startup.m)
-[![GitHub](https://img.shields.io/badge/GitHub-yuruofeng/TargetTracking-black?style=flat-square&logo=github)](https://github.com/yuruofeng/TargetTracking)
+[![GitHub](https://img.shields.io/badge/GitHub-yuruofeng/single_target_tracking-black?style=flat-square&logo=github)](https://github.com/yuruofeng/single_target_tracking)
 
 [🚀 快速开始](#-快速开始) · [📖 文档](#-算法详解) · [📊 API](#-api-参考) · [❓ FAQ](#-常见问题-faq)
 
@@ -140,7 +140,7 @@
 
 ```bash
 # 1. 克隆项目到本地
-git clone https://github.com/yuruofeng/TargetTracking.git
+git clone https://github.com/yuruofeng/single_target_tracking.git
 
 # 2. 进入项目目录
 cd TargetTracking
@@ -648,6 +648,6 @@ end
 
 Made with ❤️ for Target Tracking Research
 
-**[GitHub Repository](https://github.com/yuruofeng/TargetTracking)**
+**[GitHub Repository](https://github.com/yuruofeng/single_target_tracking)**
 
 </div>
