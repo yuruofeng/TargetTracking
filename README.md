@@ -7,8 +7,9 @@
 *Detect-Before-Track (DBT) & Track-Before-Detect (TBD)*
 
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2020b+-orange?style=flat-square&logo=mathworks)](https://www.mathworks.com/)
-[![License](https://img.shields.io/badge/License-Academic-green?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue?style=flat-square)](startup.m)
+[![GitHub](https://img.shields.io/badge/GitHub-yuruofeng/TargetTracking-black?style=flat-square&logo=github)](https://github.com/yuruofeng/TargetTracking)
 
 [🚀 快速开始](#-快速开始) · [📖 文档](#-算法详解) · [📊 API](#-api-参考) · [❓ FAQ](#-常见问题-faq)
 
@@ -139,14 +140,16 @@
 
 ### ⚡ 安装步骤
 
-```matlab
-% 1. 克隆或下载项目到本地
-git clone https://github.com/your-repo/TargetTracking.git
+```bash
+# 1. 克隆项目到本地
+git clone https://github.com/yuruofeng/TargetTracking.git
 
-% 2. 在MATLAB中切换到项目目录
+# 2. 进入项目目录
 cd TargetTracking
+```
 
-% 3. 运行初始化脚本
+```matlab
+% 3. 在MATLAB中运行初始化脚本
 startup()
 ```
 
@@ -697,7 +700,45 @@ end
 
 ## 📄 许可证
 
-本项目仅供学术研究使用。如在论文中使用，请适当引用。
+本项目采用 MIT 许可证开源发布。详见 [LICENSE](LICENSE) 文件。
+
+<details>
+<summary><strong>📜 MIT License Full Text</strong></summary>
+
+```
+MIT License
+
+Copyright (c) 2024 yuruofeng
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+</details>
+
+### 许可证要点
+
+| 权限 | 条件 | 限制 |
+|:-----|:-----|:-----|
+| ✅ 商业使用 | 📋 包含许可证副本 | ❌ 无担保 |
+| ✅ 修改 | 📋 包含版权声明 | ❌ 无责任 |
+| ✅ 分发 | | |
+| ✅ 私人使用 | | |
 
 ---
 
@@ -706,5 +747,7 @@ end
 **[⬆ 返回顶部](#-targettracking)**
 
 Made with ❤️ for Target Tracking Research
+
+**[GitHub Repository](https://github.com/yuruofeng/TargetTracking)**
 
 </div>

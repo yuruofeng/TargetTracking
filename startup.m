@@ -21,18 +21,18 @@ function startup()
     
     fprintf('\n');
     fprintf('╔════════════════════════════════════════════════════════════╗\n');
-    fprintf('║          TargetTracking v2.0.0 - 目标跟踪工具箱            ║\n');
+    fprintf('║          TargetTracking v2.0.0 - 目标跟踪工具箱              ║\n');
     fprintf('╠════════════════════════════════════════════════════════════╣\n');
-    fprintf('║  模块:                                                     ║\n');
-    fprintf('║    +dbt/   检测前跟踪 (EKF, UKF, CKF, IMM, ParticleFilter) ║\n');
-    fprintf('║    +tbd/   检测前跟踪 (DP-TBD, PF-TBD)                      ║\n');
-    fprintf('║    +utils/ 工具函数                                        ║\n');
-    fprintf('║    +viz/   可视化                                          ║\n');
+    fprintf('║  模块:                                                      ║\n');
+    fprintf('║    +dbt/   检测前跟踪 (EKF, UKF, CKF, IMM, ParticleFilter)   ║\n');
+    fprintf('║    +tbd/   检测前跟踪 (DP-TBD, PF-TBD)                       ║\n');
+    fprintf('║    +utils/ 工具函数                                         ║\n');
+    fprintf('║    +viz/   可视化                                           ║\n');
     fprintf('╠════════════════════════════════════════════════════════════╣\n');
-    fprintf('║  快速开始:                                                 ║\n');
-    fprintf('║    run(''demos/demoDbt.m'')      %% DBT滤波器演示           ║\n');
+    fprintf('║  快速开始:                                                  ║\n');
+    fprintf('║    run(''demos/demoDbt.m'')      %% DBT滤波器演示            ║\n');
     fprintf('║    run(''demos/demoTbd.m'')      %% TBD算法演示             ║\n');
-    fprintf('║    run(''tests/runAllTests.m'')  %% 运行测试套件            ║\n');
+    fprintf('║    run(''tests/runAllTests.m'')  %% 运行测试套件             ║\n');
     fprintf('╚════════════════════════════════════════════════════════════╝\n');
     fprintf('\n');
     fprintf('项目路径已配置: %s\n\n', scriptPath);
