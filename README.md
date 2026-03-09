@@ -7,8 +7,9 @@
 *Detect-Before-Track (DBT) & Track-Before-Detect (TBD)*
 
 [![MATLAB](https://img.shields.io/badge/MATLAB-R2020b+-orange?style=flat-square&logo=mathworks)](https://www.mathworks.com/)
-[![License](https://img.shields.io/badge/License-Academic-green?style=flat-square)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-blue?style=flat-square)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-2.0.0-blue?style=flat-square)](startup.m)
+[![GitHub](https://img.shields.io/badge/GitHub-yuruofeng/TargetTracking-black?style=flat-square&logo=github)](https://github.com/yuruofeng/TargetTracking)
 
 [🚀 快速开始](#-快速开始) · [📖 文档](#-算法详解) · [📊 API](#-api-参考) · [❓ FAQ](#-常见问题-faq)
 
@@ -30,8 +31,6 @@
 - [🧪 测试](#-测试)
 - [📁 目录结构](#-目录结构)
 - [❓ 常见问题 (FAQ)](#-常见问题-faq)
-- [🤝 贡献指南](#-贡献指南)
-- [📚 参考文献](#-参考文献)
 - [📄 许可证](#-许可证)
 
 ---
@@ -113,7 +112,7 @@
 │  ├─────────────┤    │ • plotManeuverComparison               ││
 │  │ • demoDbt   │    │ • CUD色盲友好配色                       ││
 │  │ • demoTbd   │    └─────────────────────────────────────────┘│
-│  │ • demoIMM   │                                                 │
+│  │ • demoManeuver │                                              │
 │  └─────────────┘    ┌─────────────────────────────────────────┐│
 │                     │              🧪 tests                    ││
 │                     │              测试套件                    ││
@@ -139,14 +138,16 @@
 
 ### ⚡ 安装步骤
 
-```matlab
-% 1. 克隆或下载项目到本地
-git clone https://github.com/your-repo/TargetTracking.git
+```bash
+# 1. 克隆项目到本地
+git clone https://github.com/yuruofeng/TargetTracking.git
 
-% 2. 在MATLAB中切换到项目目录
+# 2. 进入项目目录
 cd TargetTracking
+```
 
-% 3. 运行初始化脚本
+```matlab
+% 3. 在MATLAB中运行初始化脚本
 startup()
 ```
 
@@ -503,6 +504,7 @@ TargetTracking/
 │   └── 📄 README.md               # 资源说明
 │
 ├── 📄 startup.m                   # 项目初始化
+├── 📄 LICENSE                     # MIT许可证
 ├── 📄 .gitignore                  # Git忽略规则
 └── 📄 README.md                   # 本文件
 ```
@@ -634,39 +636,9 @@ end
 
 ---
 
-## 🤝 贡献指南
-
-欢迎贡献代码、报告问题或提出建议！
-
-### 如何贡献
-
-1. 🍴 Fork 本仓库
-2. 🌿 创建特性分支 (`git checkout -b feature/AmazingFeature`)
-3. 💾 提交更改 (`git commit -m 'Add some AmazingFeature'`)
-4. 📤 推送到分支 (`git push origin feature/AmazingFeature`)
-5. 📬 开启 Pull Request
-
-### 代码规范
-
-- 遵循 MATLAB 官方编程规范
-- 为所有公共函数添加文档注释
-- 为新功能编写单元测试
-- 使用有意义的变量名和函数名
-
-### 报告问题
-
-遇到Bug或有功能建议？请[创建Issue](../../issues)并包含：
-
-- MATLAB 版本和操作系统
-- 复现步骤
-- 期望行为和实际行为
-- 相关代码片段
-
----
-
 ## 📄 许可证
 
-本项目仅供学术研究使用。
+本项目采用 [MIT License](LICENSE) 开源许可。
 
 ---
 
@@ -675,5 +647,7 @@ end
 **[⬆ 返回顶部](#-targettracking)**
 
 Made with ❤️ for Target Tracking Research
+
+**[GitHub Repository](https://github.com/yuruofeng/TargetTracking)**
 
 </div>
