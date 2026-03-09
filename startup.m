@@ -25,7 +25,7 @@ function startup()
     fprintf('║          SingleTargetTracking v2.0.0 - 单目标跟踪工具箱          ║\n');
     fprintf('╠════════════════════════════════════════════════════════════╣\n');
     fprintf('║  模块:                                                      ║\n');
-    fprintf('║    +dbt/   检测前跟踪 (EKF, UKF, CKF, IMM, ParticleFilter)   ║\n');
+    fprintf('║    +dbt/   检测后跟踪 (EKF, UKF, CKF, IMM, ParticleFilter)   ║\n');
     fprintf('║    +tbd/   检测前跟踪 (DP-TBD, PF-TBD)                       ║\n');
     fprintf('║    +utils/ 工具函数                                         ║\n');
     fprintf('║    +viz/   可视化                                           ║\n');

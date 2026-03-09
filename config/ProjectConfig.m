@@ -3,7 +3,7 @@
 %
 %   项目结构：
 %       single_target_tracking/
-%       ├── +dbt/           # 检测前跟踪模块 (Detect-Before-Track)
+%       ├── +dbt/           # 检测后跟踪模块 (Detect-Before-Track)
 %       │   ├── 滤波器:     BaseFilter, KalmanFilterBase, EKF, UKF, CKF
 %       │   ├── 运动模型:   MotionModelEKF, MotionModelConfig
 %       │   ├── 高级滤波:   ParticleFilter, IMM
@@ -59,7 +59,7 @@ classdef ProjectConfig
             fprintf('====================================================\n\n');
             
             fprintf('模块结构:\n');
-            fprintf('  +dbt/  - 检测前跟踪 (Detect-Before-Track)\n');
+            fprintf('  +dbt/  - 检测后跟踪 (Detect-Before-Track)\n');
             fprintf('    滤波器: EKF, UKF, CKF, ParticleFilter, IMM\n');
             fprintf('    配置:   Config, ConfigIMM, MotionModelConfig\n');
             fprintf('    场景:   Scenario, ScenarioManeuver\n');

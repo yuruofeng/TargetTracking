@@ -1,5 +1,5 @@
 classdef ParticleFilter < dbt.BaseFilter
-% DBT.PARTICLEFILTER  粒子滤波器，用于检测前跟踪(DBT)。
+% DBT.PARTICLEFILTER  粒子滤波器，用于检测后跟踪(DBT)。
 %   实现标准SIR(采样重要性重采样)粒子滤波器，用于跟踪具有CT动态特性
 %   和距离/方位角测量的目标。
 %

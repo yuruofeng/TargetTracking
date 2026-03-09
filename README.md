@@ -23,7 +23,7 @@
 - [🏗️ 项目架构](#️-项目架构)
 - [🚀 快速开始](#-快速开始)
 - [📊 算法详解](#-算法详解)
-  - [检测前跟踪 (DBT)](#检测前跟踪-dbt)
+  - [检测后跟踪 (DBT)](#检测后跟踪-dbt)
   - [检测前跟踪 (TBD)](#检测前跟踪-tbd)
   - [运动模型](#运动模型)
 - [📖 API 参考](#-api-参考)
@@ -96,7 +96,7 @@
 │                                                                 │
 │  ┌─────────────┐    ┌─────────────┐    ┌─────────────────────┐ │
 │  │   📦 +dbt   │    │   📦 +tbd   │    │      📦 +utils      │ │
-│  │  检测前跟踪  │    │  检测前跟踪  │    │       工具函数       │ │
+│  │  检测后跟踪  │    │  检测前跟踪  │    │       工具函数       │ │
 │  ├─────────────┤    ├─────────────┤    ├─────────────────────┤ │
 │  │ • EKF       │    │ • DP-TBD    │    │ • FilterUtils       │ │
 │  │ • UKF       │    │ • PF-TBD    │    │ • MeasurementModel  │ │
@@ -158,7 +158,7 @@ startup()
 ║      SingleTargetTracking v2.0.0 - 单目标跟踪工具箱        ║
 ╠════════════════════════════════════════════════════════════╣
 ║  模块:                                                     ║
-║    +dbt/   检测前跟踪 (EKF, UKF, CKF, IMM, ParticleFilter) ║
+║    +dbt/   检测后跟踪 (EKF, UKF, CKF, IMM, ParticleFilter) ║
 ║    +tbd/   检测前跟踪 (DP-TBD, PF-TBD)                      ║
 ║    +utils/ 工具函数                                        ║
 ║    +viz/   可视化                                          ║
@@ -209,7 +209,7 @@ run('tests/TestDbtFilters.m')
 
 ## 📊 算法详解
 
-### 检测前跟踪 (DBT)
+### 检测后跟踪 (DBT)
 
 <table>
 <tr>
@@ -452,7 +452,7 @@ run('tests/TestTbdAlgorithms.m')
 
 ```
 single_target_tracking/
-├── 📂 +dbt/                       # 检测前跟踪模块
+├── 📂 +dbt/                       # 检测后跟踪模块
 │   ├── 📄 BaseFilter.m            # 抽象滤波器接口
 │   ├── 📄 KalmanFilterBase.m      # 卡尔曼滤波基类
 │   ├── 📄 EKF.m                   # 扩展卡尔曼滤波
