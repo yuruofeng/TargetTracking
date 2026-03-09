@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 SingleTargetTracking
+# 🎯 Single Target Tracking
 
 **MATLAB单目标跟踪算法工具箱**
 
