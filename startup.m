@@ -9,8 +9,9 @@ function startup()
 %
 %   初始化后可使用：
 %       dbt.EKF, dbt.UKF, dbt.CKF, dbt.IMM, dbt.ParticleFilter
+%       phd.ImmPhdFilter, phd.SimmPhdFilter, phd.GaussMixture
 %       tbd.DpTbd, tbd.PfTbd
-%       utils.FilterUtils, utils.MeasurementModel
+%       utils.FilterUtils, utils.MeasurementModel, utils.Hungarian, utils.OspaMetric
 %       viz.Visualizer
 
     scriptPath = fileparts(mfilename('fullpath'));
@@ -22,16 +23,18 @@ function startup()
     
     fprintf('\n');
     fprintf('╔════════════════════════════════════════════════════════════╗\n');
-    fprintf('║          SingleTargetTracking v2.0.0 - 单目标跟踪工具箱          ║\n');
+    fprintf('║          SingleTargetTracking v2.1.0 - 单目标跟踪工具箱          ║\n');
     fprintf('╠════════════════════════════════════════════════════════════╣\n');
     fprintf('║  模块:                                                      ║\n');
     fprintf('║    +dbt/   检测后跟踪 (EKF, UKF, CKF, IMM, ParticleFilter)   ║\n');
+    fprintf('║    +phd/   PHD滤波器 (IMM-PHD, SIMM-PHD, GaussMixture)       ║\n');
     fprintf('║    +tbd/   检测前跟踪 (DP-TBD, PF-TBD)                       ║\n');
-    fprintf('║    +utils/ 工具函数                                         ║\n');
+    fprintf('║    +utils/ 工具函数 (Hungarian, OspaMetric)                  ║\n');
     fprintf('║    +viz/   可视化                                           ║\n');
     fprintf('╠════════════════════════════════════════════════════════════╣\n');
     fprintf('║  快速开始:                                                  ║\n');
     fprintf('║    run(''demos/demoDbt.m'')      %% DBT滤波器演示            ║\n');
+    fprintf('║    run(''demos/demoPhd.m'')      %% PHD滤波器演示            ║\n');
     fprintf('║    run(''demos/demoTbd.m'')      %% TBD算法演示             ║\n');
     fprintf('║    run(''tests/runAllTests.m'')  %% 运行测试套件             ║\n');
     fprintf('╚════════════════════════════════════════════════════════════╝\n');

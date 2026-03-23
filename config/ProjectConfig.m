@@ -10,6 +10,12 @@
 %       │   ├── 配置类:     Config, ConfigIMM, ConfigManeuver
 %       │   ├── 场景生成:   Scenario, ScenarioManeuver
 %       │   └── 工厂类:     FilterFactory
+%       ├── +phd/           # 概率假设密度滤波模块 (PHD Filter)
+%       │   ├── 滤波器:     ImmPhdFilter, SimmPhdFilter, MultiModelFilter
+%       │   ├── 运动模型:   CvFilter, CtFilter, CaFilter
+%       │   ├── 工具类:     GaussMixture, ImmUtils, SimmUtils, MathUtils
+%       │   ├── 配置类:     Config
+%       │   └── 场景生成:   Scenario
 %       ├── +tbd/           # 检测前跟踪模块 (Track-Before-Detect)
 %       │   ├── 算法实现:   BaseTbd, DpTbd, PfTbd
 %       │   ├── 配置类:     Config
@@ -30,11 +36,12 @@
 classdef ProjectConfig
     properties (Constant)
         PROJECT_NAME = 'SingleTargetTracking'
-        PROJECT_VERSION = '2.0.0'
+        PROJECT_VERSION = '2.1.0'
         PROJECT_AUTHOR = 'Target Tracking Team'
         
         MODULES = struct(...
             'DBT', 'dbt', ...
+            'PHD', 'phd', ...
             'TBD', 'tbd', ...
             'Utils', 'utils', ...
             'Viz', 'viz' ...
@@ -45,9 +52,17 @@ classdef ProjectConfig
         DBT_CONFIGS = {'Config', 'ConfigIMM', 'ConfigManeuver', 'MotionModelConfig'}
         DBT_SCENARIOS = {'Scenario', 'ScenarioManeuver'}
         
+        PHD_FILTERS = {'ImmPhdFilter', 'SimmPhdFilter', 'MultiModelFilter', ...
+                       'CvFilter', 'CtFilter', 'CaFilter'}
+        PHD_UTILS = {'GaussMixture', 'ImmUtils', 'SimmUtils', 'MathUtils'}
+        PHD_CONFIGS = {'Config'}
+        PHD_SCENARIOS = {'Scenario'}
+        
         TBD_ALGORITHMS = {'BaseTbd', 'DpTbd', 'PfTbd'}
         TBD_CONFIGS = {'Config'}
         TBD_SCENARIOS = {'Scenario'}
+        
+        UTILS_TOOLS = {'FilterUtils', 'MeasurementModel', 'Hungarian', 'OspaMetric'}
     end
     
     methods (Static)
@@ -64,17 +79,26 @@ classdef ProjectConfig
             fprintf('    配置:   Config, ConfigIMM, MotionModelConfig\n');
             fprintf('    场景:   Scenario, ScenarioManeuver\n');
             fprintf('\n');
+            fprintf('  +phd/  - 概率假设密度滤波 (PHD Filter)\n');
+            fprintf('    滤波器: ImmPhdFilter, SimmPhdFilter\n');
+            fprintf('    模型:   CvFilter, CtFilter, CaFilter\n');
+            fprintf('    工具:   GaussMixture, ImmUtils, SimmUtils\n');
+            fprintf('    配置:   Config\n');
+            fprintf('    场景:   Scenario\n');
+            fprintf('\n');
             fprintf('  +tbd/  - 检测前跟踪 (Track-Before-Detect)\n');
             fprintf('    算法:   DpTbd, PfTbd\n');
             fprintf('    配置:   Config\n');
             fprintf('    场景:   Scenario\n');
             fprintf('\n');
             fprintf('  +utils/ - 工具函数\n');
+            fprintf('    工具:   FilterUtils, Hungarian, OspaMetric\n');
             fprintf('  +viz/   - 可视化\n');
             fprintf('\n');
             fprintf('快速开始:\n');
-            fprintf('  run(''demos/demoDbt.m'')  %% DBT滤波器演示\n');
-            fprintf('  run(''demos/demoTbd.m'')  %% TBD算法演示\n');
+            fprintf('  run(''demos/demoDbt.m'')   %% DBT滤波器演示\n');
+            fprintf('  run(''demos/demoPhd.m'')   %% PHD滤波器演示\n');
+            fprintf('  run(''demos/demoTbd.m'')   %% TBD算法演示\n');
             fprintf('  run(''tests/runAllTests.m'')  %% 运行测试\n');
             fprintf('====================================================\n\n');
         end
@@ -84,6 +108,10 @@ classdef ProjectConfig
             fprintf('  DBT模块:\n');
             for i = 1:length(ProjectConfig.DBT_FILTERS)
                 fprintf('    - dbt.%s\n', ProjectConfig.DBT_FILTERS{i});
+            end
+            fprintf('  PHD模块:\n');
+            for i = 1:length(ProjectConfig.PHD_FILTERS)
+                fprintf('    - phd.%s\n', ProjectConfig.PHD_FILTERS{i});
             end
             fprintf('  TBD模块:\n');
             for i = 1:length(ProjectConfig.TBD_ALGORITHMS)
