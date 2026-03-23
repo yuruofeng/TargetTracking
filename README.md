@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎯 SingleTargetTracking
+# 🎯 Single Target Tracking
 
 **MATLAB单目标跟踪算法工具箱**
 
@@ -640,13 +640,6 @@ end
 
 本项目采用 [MIT License](LICENSE) 开源许可。
 
----
-
-<div align="center">
-
-**[⬆ 返回顶部](#-targettracking)**
-
-Made with ❤️ for Target Tracking Research
 
 **[GitHub Repository](https://github.com/yuruofeng/single-target-tracking)**
 
